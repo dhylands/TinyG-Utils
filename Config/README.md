@@ -82,6 +82,37 @@ Snippet of output produced by the show command:
 [hv]  hardware version            8.00
 ...
 ```
+#Typical Usage
+
+I wrote this so that I could preserve my TinyG configuration when upgrading
+the firmware. When you upgrade the firmware it resets everything back to
+factory defaults.
+
+Steps to upgrade your firmware and preserve your settings:
+
+##Archive (backup) your old configuration
+```
+Config.py archive old.config
+```
+##Upgrade your firmware
+Use the TinyG updater app, or avrdude for linux. See: https://github.com/synthetos/TinyG/wiki/TinyG-Updating-Firmware
+##Restore your old configuration
+Use the name from the archive step.
+```
+Config.py restore old.config
+```
+##Re-archive your new configuration
+```
+Config.py archive new.config
+```
+##Compare the old and new configurations
+```
+Config.py dump old.config > old.dump
+Config.py dump new.config > new.dump
+diff old.dump new.dump
+```
+Use the comparison tool of your choice, `diff` is just an example. I normally
+use a GUI tool called `meld` from http://meldmerge.org/
 
 #Configuration File Format
 
