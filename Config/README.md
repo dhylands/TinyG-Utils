@@ -69,9 +69,9 @@ Snippet of output produced by the dump command:
 
 ##show [filename]
 
-The dump command will read a configuration file from your host computer (if a
+The show command will read a configuration file from your host computer (if a
 filename was provided), or read the configuration from your TinyG (if no
-filename was provided) and display it in a manner similar to the $$ command.
+filename was provided) and display it in a manner similar to TinyG's $$ command.
 
 Snippet of output produced by the show command:
 ```
